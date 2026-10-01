@@ -232,6 +232,22 @@ Popularity =
 
 `C3_Nations` 与 Inclusivity 有一定的概念重叠，因此论文中需要说明这是 popularity reach 代理，或在敏感性分析中删除 C3。
 
+#### 1.6 Legacy Cost Subfactor
+
+CSV 中还保留 `S_PerCapitaCost_KUSD`。如果单独计算这个成本代理，则它是负向指标：
+
+```text
+S_cost_forward = (max(S) - S) / (max(S) - min(S))
+```
+
+旧版 Popularity + Sustainability 二维合成式为：
+
+```text
+Legacy_Total = 0.85 × Popularity + 0.15 × S_cost_forward
+```
+
+统一模型的最终 Overall 不再次使用这个成本代理，因为 Sustainability 已由资源指数和碳排放指数计算，避免重复计分。
+
 ### 2. Inclusivity
 
 统一 CSV 直接提供五个中间因子：
@@ -455,11 +471,29 @@ X2 = min(Male_Events, Female_Events)
      / max(Male_Events, Female_Events)
 ```
 
-2032 年趋势预测：
+2032 年趋势预测。先对年份 `Year` 和女性比例 `Female_Ratio` 做线性回归：
+
+```text
+x_bar = mean(Year)
+y_bar = mean(Female_Ratio)
+
+b = Σ[(Year_i - x_bar)(Female_Ratio_i - y_bar)]
+    / Σ[(Year_i - x_bar)^2]
+
+a = y_bar - b × x_bar
+```
+
+然后预测：
 
 ```text
 Female_Ratio_2032 = clip(a + b × 2032, 0, 1)
 X3 = 1 - 2 × |Female_Ratio_2032 - 0.5|
+```
+
+其中：
+
+```text
+clip(z, 0, 1) = min(max(z, 0), 1)
 ```
 
 Gender Score：
