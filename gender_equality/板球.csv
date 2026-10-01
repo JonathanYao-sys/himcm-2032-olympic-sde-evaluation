@@ -1,0 +1,3 @@
+﻿sde_id,sport,year,male_athletes,female_athletes,male_events,female_events,is_current,source,notes
+CRICKET,Cricket T20 (板球),2024,90.0000,90.0000,,,0,https://en.wikipedia.org/wiki/Cricket_at_the_2028_Summer_Olympics,LA28 planned parity proxy; no Olympic history before 2028.
+CRICKET,Cricket T20 (板球),2028,90.0000,90.0000,1,1,1,https://en.wikipedia.org/wiki/Cricket_at_the_2028_Summer_Olympics,LA28 planned six-team men/women T20 tournament; 180 athletes total.

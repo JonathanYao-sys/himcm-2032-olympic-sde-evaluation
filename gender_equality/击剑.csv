@@ -1,0 +1,6 @@
+﻿sde_id,sport,year,male_athletes,female_athletes,male_events,female_events,is_current,source,notes
+FENCING,Fencing (击剑),2008,168.0000,164.0000,,,0,https://www.olympedia.org/editions/53/sports/FEN,Olympedia official Olympic event rows; participant-event sum used as proxy.
+FENCING,Fencing (击剑),2012,171.0000,174.0000,,,0,https://www.olympedia.org/editions/54/sports/FEN,Olympedia official Olympic event rows; participant-event sum used as proxy.
+FENCING,Fencing (击剑),2016,172.0000,174.0000,,,0,https://www.olympedia.org/editions/59/sports/FEN,Olympedia official Olympic event rows; participant-event sum used as proxy.
+FENCING,Fencing (击剑),2020,211.0000,203.0000,,,0,https://www.olympedia.org/editions/61/sports/FEN,Olympedia official Olympic event rows; participant-event sum used as proxy.
+FENCING,Fencing (击剑),2024,202.0000,201.0000,6.0,6.0,1,https://www.olympedia.org/editions/63/sports/FEN,Latest available Olympic edition: 2024; participant-event sum used as proxy.

@@ -1,0 +1,6 @@
+﻿sde_id,sport,year,male_athletes,female_athletes,male_events,female_events,is_current,source,notes
+BASKETBALL,Basketball (篮球),2008,144.0000,143.0000,,,0,https://www.olympedia.org/editions/53/sports/BKB,Olympedia official Olympic event rows; participant-event sum used as proxy.
+BASKETBALL,Basketball (篮球),2012,144.0000,143.0000,,,0,https://www.olympedia.org/editions/54/sports/BKB,Olympedia official Olympic event rows; participant-event sum used as proxy.
+BASKETBALL,Basketball (篮球),2016,141.0000,140.0000,,,0,https://www.olympedia.org/editions/59/sports/BKB,Olympedia official Olympic event rows; participant-event sum used as proxy.
+BASKETBALL,Basketball (篮球),2020,143.0000,142.0000,,,0,https://www.olympedia.org/editions/61/sports/BKB,Olympedia official Olympic event rows; participant-event sum used as proxy.
+BASKETBALL,Basketball (篮球),2024,142.0000,144.0000,1.0,1.0,1,https://www.olympedia.org/editions/63/sports/BKB,Latest available Olympic edition: 2024; participant-event sum used as proxy.

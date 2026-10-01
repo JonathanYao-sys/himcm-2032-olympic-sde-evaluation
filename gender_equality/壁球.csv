@@ -1,0 +1,3 @@
+﻿sde_id,sport,year,male_athletes,female_athletes,male_events,female_events,is_current,source,notes
+SQUASH,Squash (壁球),2024,16.0000,16.0000,,,0,https://en.wikipedia.org/wiki/Squash_at_the_2028_Summer_Olympics,LA28 planned parity proxy; no Olympic history before 2028.
+SQUASH,Squash (壁球),2028,16.0000,16.0000,1,1,1,https://en.wikipedia.org/wiki/Squash_at_the_2028_Summer_Olympics,LA28 planned men/women individual events; 32 athletes total.

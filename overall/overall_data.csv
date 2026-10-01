@@ -1,0 +1,22 @@
+﻿sde_id,sde_name,popularity_accessibility,inclusivity,safety_fair_play,sustainability,innovation,gender_equality,source,notes
+BOXING,拳击 (Boxing),0.4256,0.9886,0.704463,0.2378,0.369325,0.8112,popularity from attached image; other dimensions from submodel outputs,Popularity & Accessibility uses the attached image's popularity score as the current team proxy.
+BREAKING,霹雳舞 (Breaking),0.1939,0.7048,0.350936,0.5075,0.800777,0.9798,popularity from attached image; other dimensions from submodel outputs,Breaking has high innovation and gender scores but weak popularity and safety.
+KARATE,空手道 (Karate),0.2639,0.9724,0.760581,0.2106,0.487306,0.9753,popularity from attached image; other dimensions from submodel outputs,Integrated submodel score.
+CRICKET,板球 (Cricket T20),0.4716,0.8963,0.551061,0.4259,0.172641,1.0000,popularity from attached image; other dimensions from submodel outputs,Integrated submodel score.
+FLAG_FOOTBALL,腰旗橄榄球 (Flag Football),0.2461,0.8210,0.861592,0.6097,0.767772,1.0000,popularity from attached image; other dimensions from submodel outputs,Integrated submodel score.
+SQUASH,壁球 (Squash),0.1574,0.8878,0.734363,0.3406,0.101554,1.0000,popularity from attached image; other dimensions from submodel outputs,Integrated submodel score.
+LACROSSE_SIXES,六人制长曲棍球 (Lacrosse Sixes),0.1043,0.8374,0.880268,0.5595,0.885752,1.0000,popularity from attached image; other dimensions from submodel outputs,Integrated submodel score.
+TRACK_CYCLING,场馆自行车 (Cycling track),0.4387,0.9721,0.932659,0.1000,0.308393,0.8787,popularity from attached image; other dimensions from submodel outputs,Gender model labels this SDE as 场地自行车; merged to 场馆自行车.
+ATHLETICS,田径 (Athletics),0.8608,0.9815,0.876542,0.2500,0.525388,0.9971,popularity from attached image; other dimensions from submodel outputs,Integrated submodel score.
+FENCING,击剑 (Fencing),0.1844,0.9301,0.947609,0.2922,0.293160,0.9967,popularity from attached image; other dimensions from submodel outputs,Integrated submodel score.
+SWIMMING,游泳 (Swimming),0.7273,0.9905,0.985050,0.0563,0.520311,0.9524,popularity from attached image; other dimensions from submodel outputs,Integrated submodel score.
+JUDO,柔道 (Judo),0.3654,0.9927,0.749357,0.1960,0.298238,0.9652,popularity from attached image; other dimensions from submodel outputs,"High inclusiveness is offset by lower popularity, sustainability and innovation."
+MODERN_PENTATHLON,现代五项 (Modern Pentathlon),0.0475,0.8740,0.854095,0.3030,0.449223,1.0000,popularity from attached image; other dimensions from submodel outputs,Integrated submodel score.
+SHOOTING,射击 (Shooting),0.1478,0.9361,1.000000,0.3361,0.428912,0.9374,popularity from attached image; other dimensions from submodel outputs,Integrated submodel score.
+BADMINTON,羽毛球 (Badminton),0.3790,0.9698,0.812927,0.2212,0.530466,0.9780,popularity from attached image; other dimensions from submodel outputs,Integrated submodel score.
+WEIGHTLIFTING,举重 (Weightlifting),0.2263,0.9883,0.231967,0.2482,0.436529,0.9403,popularity from attached image; other dimensions from submodel outputs,Integrated submodel score.
+TENNIS,网球 (Tennis),0.6065,0.9817,0.824150,0.2688,0.364248,0.9980,popularity from attached image; other dimensions from submodel outputs,Integrated submodel score.
+FOOTBALL,足球 (Football),0.7498,0.9570,0.667022,0.2543,0.409947,0.9077,popularity from attached image; other dimensions from submodel outputs,Integrated submodel score.
+BASKETBALL,篮球 (Basketball),0.7258,0.9722,0.633351,0.1730,0.601554,0.9953,popularity from attached image; other dimensions from submodel outputs,Integrated submodel score.
+DIVING,跳水 (Diving),0.4175,0.9703,0.415269,0.0583,0.313471,0.9760,popularity from attached image; other dimensions from submodel outputs,Integrated submodel score.
+FIELD_HOCKEY,场地曲棍球 (Field Hockey),0.2040,0.9137,0.723139,0.3737,0.283005,0.9867,popularity from attached image; other dimensions from submodel outputs,Integrated submodel score.

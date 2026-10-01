@@ -1,0 +1,22 @@
+sde_id,sde_name,doping_screening,injury_incidence_rate,fairness_enforcement,source,notes
+BOXING,拳击 (Boxing),1,0.6583,1,Legacy Safety and Fair Play data,Data migrated from Olympic_part6 legacy scripts; source URL needs verification.
+BREAKING,霹雳舞 (Breaking),1,0.2183,0,Legacy Safety and Fair Play data,Data migrated from Olympic_part6 legacy scripts; source URL needs verification.
+KARATE,空手道 (Karate),1,0.5333,1,Legacy Safety and Fair Play data,Data migrated from Olympic_part6 legacy scripts; source URL needs verification.
+CRICKET,板球 (Cricket),1,1.0000,1,Legacy Safety and Fair Play data,Data migrated from Olympic_part6 legacy scripts; source URL needs verification.
+FLAG_FOOTBALL,腰旗橄榄球 (Flag football),1,0.3083,1,Legacy Safety and Fair Play data,Data migrated from Olympic_part6 legacy scripts; source URL needs verification.
+SQUASH,壁球 (Squash),1,0.5917,1,Legacy Safety and Fair Play data,Data migrated from Olympic_part6 legacy scripts; source URL needs verification.
+LACROSSE_SIXES,六人制长曲棍球 (Lacrosse Sixes),1,0.2667,1,Legacy Safety and Fair Play data,Data migrated from Olympic_part6 legacy scripts; source URL needs verification.
+TRACK_CYCLING,场馆自行车 (Cycling track),1,0.1500,1,Legacy Safety and Fair Play data,Data migrated from Olympic_part6 legacy scripts; source URL needs verification.
+ATHLETICS,田径 (Athletics),1,0.2750,1,Legacy Safety and Fair Play data,Data migrated from Olympic_part6 legacy scripts; source URL needs verification.
+FENCING,击剑 (Fencing),1,0.1167,1,Legacy Safety and Fair Play data,Data migrated from Olympic_part6 legacy scripts; source URL needs verification.
+SWIMMING,游泳 (Swimming),1,0.0333,1,Legacy Safety and Fair Play data,Data migrated from Olympic_part6 legacy scripts; source URL needs verification.
+JUDO,柔道 (Judo),1,0.5583,1,Legacy Safety and Fair Play data,Data migrated from Olympic_part6 legacy scripts; source URL needs verification.
+MODERN_PENTATHLON,现代五项 (Modern Pentathlon),1,0.3250,1,Legacy Safety and Fair Play data,Data migrated from Olympic_part6 legacy scripts; source URL needs verification.
+SHOOTING,射击 (Shooting),1,0.0000,1,Legacy Safety and Fair Play data,Data migrated from Olympic_part6 legacy scripts; source URL needs verification.
+BADMINTON,羽毛球 (Badminton),1,0.4167,1,Legacy Safety and Fair Play data,Data migrated from Olympic_part6 legacy scripts; source URL needs verification.
+WEIGHTLIFTING,举重 (Weightlifting),1,0.4833,0,Legacy Safety and Fair Play data,Data migrated from Olympic_part6 legacy scripts; source URL needs verification.
+TENNIS,网球 (Tennis),1,0.3917,1,Legacy Safety and Fair Play data,Data migrated from Olympic_part6 legacy scripts; source URL needs verification.
+FOOTBALL,足球 (Football),1,0.7417,1,Legacy Safety and Fair Play data,Data migrated from Olympic_part6 legacy scripts; source URL needs verification.
+BASKETBALL,篮球 (Basketball),1,0.8167,1,Legacy Safety and Fair Play data,Data migrated from Olympic_part6 legacy scripts; source URL needs verification.
+DIVING,跳水 (Diving),1,0.0750,0,Legacy Safety and Fair Play data,Data migrated from Olympic_part6 legacy scripts; source URL needs verification.
+FIELD_HOCKEY,场地曲棍球 (Field Hockey),1,0.6167,1,Legacy Safety and Fair Play data,Data migrated from Olympic_part6 legacy scripts; source URL needs verification.

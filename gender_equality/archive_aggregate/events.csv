@@ -1,0 +1,22 @@
+﻿SDE_ID,Sport,Male_Events,Female_Events,Source,Notes
+BOXING,Boxing (拳击),7.0,6.0,https://www.olympedia.org/editions/63/sports/BOX,Latest available Olympic edition: 2024; mixed/open events split 0.5/0.5.
+BREAKING,Breaking (霹雳舞),1.0,1.0,https://www.olympedia.org/editions/63/sports/BKG,Latest available Olympic edition: 2024; mixed/open events split 0.5/0.5.
+KARATE,Karate (空手道),4.0,4.0,https://www.olympedia.org/editions/61/sports/KTE,Latest available Olympic edition: 2020; mixed/open events split 0.5/0.5.
+CRICKET,Cricket T20 (板球),1,1,https://en.wikipedia.org/wiki/Cricket_at_the_2028_Summer_Olympics,LA28 planned six-team men/women T20 tournament; 180 athletes total.
+FLAG_FOOTBALL,Flag Football (腰旗橄榄球),1,1,https://en.wikipedia.org/wiki/Flag_football_at_the_2028_Summer_Olympics,LA28 planned men/women events; 120 athletes total.
+SQUASH,Squash (壁球),1,1,https://en.wikipedia.org/wiki/Squash_at_the_2028_Summer_Olympics,LA28 planned men/women individual events; 32 athletes total.
+LACROSSE_SIXES,Lacrosse Sixes (六人制长曲棍球),1,1,https://en.wikipedia.org/wiki/2028_Summer_Olympics,LA28 programme lists men/women lacrosse events; team quota is treated as a proxy.
+TRACK_CYCLING,Cycling Track (场地自行车),6.0,6.0,https://www.olympedia.org/editions/63/sports/CTR,Latest available Olympic edition: 2024; mixed/open events split 0.5/0.5.
+ATHLETICS,Athletics (田径),24.0,24.0,https://www.olympedia.org/editions/63/sports/ATH,Latest available Olympic edition: 2024; mixed/open events split 0.5/0.5.
+FENCING,Fencing (击剑),6.0,6.0,https://www.olympedia.org/editions/63/sports/FEN,Latest available Olympic edition: 2024; mixed/open events split 0.5/0.5.
+SWIMMING,Swimming (游泳),17.5,17.5,https://www.olympedia.org/editions/63/sports/SWM,Latest available Olympic edition: 2024; mixed/open events split 0.5/0.5.
+JUDO,Judo (柔道),7.5,7.5,https://www.olympedia.org/editions/63/sports/JUD,Latest available Olympic edition: 2024; mixed/open events split 0.5/0.5.
+MODERN_PENTATHLON,Modern Pentathlon (现代五项),1.0,1.0,https://www.olympedia.org/editions/63/sports/MPN,Latest available Olympic edition: 2024; mixed/open events split 0.5/0.5.
+SHOOTING,Shooting (射击),7.5,7.5,https://www.olympedia.org/editions/63/sports/SHO,Latest available Olympic edition: 2024; mixed/open events split 0.5/0.5.
+BADMINTON,Badminton (羽毛球),2.5,2.5,https://www.olympedia.org/editions/63/sports/BDM,Latest available Olympic edition: 2024; mixed/open events split 0.5/0.5.
+WEIGHTLIFTING,Weightlifting (举重),5.0,5.0,https://www.olympedia.org/editions/63/sports/WLF,Latest available Olympic edition: 2024; mixed/open events split 0.5/0.5.
+TENNIS,Tennis (网球),2.5,2.5,https://www.olympedia.org/editions/63/sports/TEN,Latest available Olympic edition: 2024; mixed/open events split 0.5/0.5.
+FOOTBALL,Football (足球),1.0,1.0,https://www.olympedia.org/editions/63/sports/FBL,Latest available Olympic edition: 2024; mixed/open events split 0.5/0.5.
+BASKETBALL,Basketball (篮球),1.0,1.0,https://www.olympedia.org/editions/63/sports/BKB,Latest available Olympic edition: 2024; mixed/open events split 0.5/0.5.
+DIVING,Diving (跳水),4.0,4.0,https://www.olympedia.org/editions/63/sports/DIV,Latest available Olympic edition: 2024; mixed/open events split 0.5/0.5.
+FIELD_HOCKEY,Field Hockey (场地曲棍球),1.0,1.0,https://www.olympedia.org/editions/63/sports/HOC,Latest available Olympic edition: 2024; mixed/open events split 0.5/0.5.

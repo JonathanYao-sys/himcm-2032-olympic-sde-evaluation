@@ -1,0 +1,22 @@
+﻿SDE_ID,Sport,Male_Athletes,Female_Athletes,Source,Notes
+BOXING,Boxing (拳击),124,122,https://www.olympedia.org/editions/63/sports/BOX,Latest available Olympic edition: 2024; participant-event sum used as proxy.
+BREAKING,Breaking (霹雳舞),16,17,https://www.olympedia.org/editions/63/sports/BKG,Latest available Olympic edition: 2024; participant-event sum used as proxy.
+KARATE,Karate (空手道),42,39,https://www.olympedia.org/editions/61/sports/KTE,Latest available Olympic edition: 2020; participant-event sum used as proxy.
+CRICKET,Cricket T20 (板球),90,90,https://en.wikipedia.org/wiki/Cricket_at_the_2028_Summer_Olympics,LA28 planned six-team men/women T20 tournament; 180 athletes total.
+FLAG_FOOTBALL,Flag Football (腰旗橄榄球),60,60,https://en.wikipedia.org/wiki/Flag_football_at_the_2028_Summer_Olympics,LA28 planned men/women events; 120 athletes total.
+SQUASH,Squash (壁球),16,16,https://en.wikipedia.org/wiki/Squash_at_the_2028_Summer_Olympics,LA28 planned men/women individual events; 32 athletes total.
+LACROSSE_SIXES,Lacrosse Sixes (六人制长曲棍球),72,72,https://en.wikipedia.org/wiki/2028_Summer_Olympics,LA28 programme lists men/women lacrosse events; team quota is treated as a proxy.
+TRACK_CYCLING,Cycling Track (场地自行车),178,178,https://www.olympedia.org/editions/63/sports/CTR,Latest available Olympic edition: 2024; participant-event sum used as proxy.
+ATHLETICS,Athletics (田径),1067,1071,https://www.olympedia.org/editions/63/sports/ATH,Latest available Olympic edition: 2024; participant-event sum used as proxy.
+FENCING,Fencing (击剑),202,201,https://www.olympedia.org/editions/63/sports/FEN,Latest available Olympic edition: 2024; participant-event sum used as proxy.
+SWIMMING,Swimming (游泳),771,682,https://www.olympedia.org/editions/63/sports/SWM,Latest available Olympic edition: 2024; participant-event sum used as proxy.
+JUDO,Judo (柔道),256,250,https://www.olympedia.org/editions/63/sports/JUD,Latest available Olympic edition: 2024; participant-event sum used as proxy.
+MODERN_PENTATHLON,Modern Pentathlon (现代五项),36,36,https://www.olympedia.org/editions/63/sports/MPN,Latest available Olympic edition: 2024; participant-event sum used as proxy.
+SHOOTING,Shooting (射击),275,278,https://www.olympedia.org/editions/63/sports/SHO,Latest available Olympic edition: 2024; participant-event sum used as proxy.
+BADMINTON,Badminton (羽毛球),90,86,https://www.olympedia.org/editions/63/sports/BDM,Latest available Olympic edition: 2024; participant-event sum used as proxy.
+WEIGHTLIFTING,Weightlifting (举重),61,61,https://www.olympedia.org/editions/63/sports/WLF,Latest available Olympic edition: 2024; participant-event sum used as proxy.
+TENNIS,Tennis (网球),144,144,https://www.olympedia.org/editions/63/sports/TEN,Latest available Olympic edition: 2024; participant-event sum used as proxy.
+FOOTBALL,Football (足球),291,215,https://www.olympedia.org/editions/63/sports/FBL,Latest available Olympic edition: 2024; participant-event sum used as proxy.
+BASKETBALL,Basketball (篮球),142,144,https://www.olympedia.org/editions/63/sports/BKB,Latest available Olympic edition: 2024; participant-event sum used as proxy.
+DIVING,Diving (跳水),83,89,https://www.olympedia.org/editions/63/sports/DIV,Latest available Olympic edition: 2024; participant-event sum used as proxy.
+FIELD_HOCKEY,Field Hockey (场地曲棍球),212,203,https://www.olympedia.org/editions/63/sports/HOC,Latest available Olympic edition: 2024; participant-event sum used as proxy.

@@ -1,0 +1,6 @@
+﻿sde_id,sport,year,male_athletes,female_athletes,male_events,female_events,is_current,source,notes
+MODERN_PENTATHLON,Modern Pentathlon (现代五项),2008,36.0000,36.0000,,,0,https://www.olympedia.org/editions/53/sports/MPN,Olympedia official Olympic event rows; participant-event sum used as proxy.
+MODERN_PENTATHLON,Modern Pentathlon (现代五项),2012,36.0000,36.0000,,,0,https://www.olympedia.org/editions/54/sports/MPN,Olympedia official Olympic event rows; participant-event sum used as proxy.
+MODERN_PENTATHLON,Modern Pentathlon (现代五项),2016,36.0000,36.0000,,,0,https://www.olympedia.org/editions/59/sports/MPN,Olympedia official Olympic event rows; participant-event sum used as proxy.
+MODERN_PENTATHLON,Modern Pentathlon (现代五项),2020,36.0000,36.0000,,,0,https://www.olympedia.org/editions/61/sports/MPN,Olympedia official Olympic event rows; participant-event sum used as proxy.
+MODERN_PENTATHLON,Modern Pentathlon (现代五项),2024,36.0000,36.0000,1.0,1.0,1,https://www.olympedia.org/editions/63/sports/MPN,Latest available Olympic edition: 2024; participant-event sum used as proxy.
