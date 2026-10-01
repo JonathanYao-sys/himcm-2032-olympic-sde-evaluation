@@ -9,6 +9,14 @@ A single-file, single-input model for evaluating Olympic Sport, Discipline, or E
 5. Relevance and Innovation
 6. Gender Equity
 
+## Problem Statement
+
+The original problem statement is included for reference:
+
+- [`docs/2024_HiMCM_Problem_A.pdf`](docs/2024_HiMCM_Problem_A.pdf)
+
+The PDF is property of COMAP and is included only for educational, non-commercial contest work.
+
 The repository is intentionally consolidated:
 
 ```text
