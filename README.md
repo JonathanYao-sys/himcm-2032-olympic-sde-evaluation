@@ -158,3 +158,366 @@ Inclusivity and gender values are provided as precomputed intermediate factors. 
 ## License
 
 MIT License. See `LICENSE`.
+
+## Detailed Factor Calculations
+
+这一节说明每个小因子是如何从 CSV 字段计算出来的。统一模型不依赖第三方库，所有计算都在 `olympic_sde_model.py` 中完成。
+
+### 1. Popularity and Accessibility
+
+#### 1.1 原始指标
+
+CSV 中提供五个 Popularity 指标：
+
+```text
+C1_ViewShare_Pct              收视份额
+C2_Attendance_Pct             上座率
+C3_Nations                    参与国家数
+C4_RegisteredAthletes         注册运动员数
+C5_Top5AvgFollowers_10k       前五名运动员平均粉丝数
+```
+
+方向均为正向指标。
+
+#### 1.2 长尾处理
+
+C4 和 C5 数量级差异很大，因此先做：
+
+```text
+C4' = ln(1 + C4)
+C5' = ln(1 + C5)
+```
+
+C1、C2、C3 保持原值。
+
+#### 1.3 Min–Max 归一化
+
+对每个指标：
+
+```text
+x' = (x - min(x)) / (max(x) - min(x))
+```
+
+如果某指标所有 SDE 都相同，则统一设为 1，并在熵权中视为无区分能力。
+
+#### 1.4 熵权
+
+```text
+p_ij = x'_ij / Σ_i x'_ij
+e_j = -(1 / ln n) × Σ_i p_ij ln(p_ij)
+d_j = 1 - e_j
+w_j = d_j / Σ_j d_j
+```
+
+当前 21 个 SDE 上计算得到：
+
+| Indicator | Entropy Weight |
+|---|---:|
+| C1_ViewShare_Pct | 0.423525 |
+| C2_Attendance_Pct | 0.132669 |
+| C3_Nations | 0.114611 |
+| C4_RegisteredAthletes | 0.086975 |
+| C5_Top5AvgFollowers_10k | 0.242221 |
+
+#### 1.5 Popularity Score
+
+```text
+Popularity =
+0.423525 × C1'
++ 0.132669 × C2'
++ 0.114611 × C3'
++ 0.086975 × C4'
++ 0.242221 × C5'
+```
+
+`C3_Nations` 与 Inclusivity 有一定的概念重叠，因此论文中需要说明这是 popularity reach 代理，或在敏感性分析中删除 C3。
+
+### 2. Inclusivity
+
+统一 CSV 直接提供五个中间因子：
+
+```text
+inclusivity_P
+inclusivity_D
+inclusivity_B
+inclusivity_R
+inclusivity_T
+```
+
+这些中间因子由原始国家-年份数据计算而来。完整国家层数据保留在 Git 历史提交 `03a71e3`。
+
+#### 2.1 P：国家覆盖广度
+
+P 是饱和型国家覆盖分：
+
+```text
+若 N < 75:
+    P = 0.70 × N / 75
+
+若 N >= 75:
+    P = 0.70 + 0.30 × [1 - exp(-(N - 75) / 50)]
+                     / [1 - exp(-(206 - 75) / 50)]
+```
+
+其中 `N` 是当前期有活动证据的国家/协会数量。
+
+#### 2.2 D：五大洲覆盖深度
+
+```text
+D = (1/5) × Σ_c min(n_c / 15, 1)
+```
+
+其中 `n_c` 是洲 `c` 的活跃国家数。每个洲达到 15 个国家时获得满深度分。
+
+#### 2.3 B：五大洲分布均衡性
+
+```text
+p_c = n_c / N
+H_B = -Σ_c p_c ln(p_c)
+B = H_B / ln(5)
+```
+
+五个洲完全均匀时 `B = 1`。
+
+#### 2.4 R：次区域代表性
+
+```text
+q_r = n_r / N
+H_R = -Σ_r q_r ln(q_r)
+R = H_R / ln(22)
+```
+
+其中 `22` 是 UN M49 次区域数量参考值。
+
+#### 2.5 T：持续全球参与
+
+对每个可评估观测期：
+
+```text
+T_s = 0.5 × min(N_s / 75, 1)
+    + 0.5 × min(K_s / 4, 1)
+```
+
+然后：
+
+```text
+T = average(T_s)
+```
+
+#### 2.6 Inclusivity Score
+
+```text
+Inclusivity =
+0.35 × P
++ 0.25 × D
++ 0.20 × B
++ 0.10 × R
++ 0.10 × T
+```
+
+### 3. Fairness and Safety
+
+CSV 字段：
+
+```text
+doping_screening
+injury_incidence_rate
+fairness_enforcement
+```
+
+指标方向：
+
+```text
+doping_screening       positive
+injury_incidence_rate  negative
+fairness_enforcement   positive
+```
+
+#### 3.1 归一化
+
+正向指标：
+
+```text
+x' = (x - min(x)) / (max(x) - min(x))
+```
+
+负向指标：
+
+```text
+x' = (max(x) - x) / (max(x) - min(x))
+```
+
+#### 3.2 熵权
+
+使用与 Popularity 相同的熵权公式。
+
+当前权重：
+
+| Indicator | Entropy Weight |
+|---|---:|
+| doping_screening | 0.000000 |
+| injury_incidence_rate | 0.448939 |
+| fairness_enforcement | 0.551061 |
+
+`doping_screening` 在当前 21 个样本中全部为 1，因此没有区分度，权重为 0。
+
+#### 3.3 Safety Score
+
+```text
+Safety =
+0.000000 × doping'
++ 0.448939 × injury_forward'
++ 0.551061 × fairness'
+```
+
+### 4. Sustainability
+
+CSV 字段：
+
+```text
+resource_consumption_index
+carbon_emissions_index
+```
+
+两者都是高影响指数，越高越差。
+
+先正向化：
+
+```text
+S_resource = 1 - resource_consumption_index
+S_carbon   = 1 - carbon_emissions_index
+```
+
+使用固定权重：
+
+```text
+Sustainability = 0.5 × S_resource + 0.5 × S_carbon
+```
+
+### 5. Relevance and Innovation
+
+CSV 字段：
+
+```text
+R1_YoungAppeal
+R2_YearScore
+```
+
+两者均在 `0–1`。
+
+使用熵权：
+
+```text
+p_ij = x_ij / Σ_i x_ij
+e_j = -(1 / ln n) × Σ_i p_ij ln(p_ij)
+d_j = 1 - e_j
+w_j = d_j / Σ_j d_j
+```
+
+当前权重：
+
+| Indicator | Entropy Weight |
+|---|---:|
+| R1_YoungAppeal | 0.253884 |
+| R2_YearScore | 0.746116 |
+
+Innovation Score：
+
+```text
+Innovation =
+0.253884 × R1_YoungAppeal
++ 0.746116 × R2_YearScore
+```
+
+### 6. Gender Equity
+
+CSV 字段：
+
+```text
+X1
+X2
+X3
+```
+
+这三个中间因子分别来自：
+
+当前运动员比例平衡：
+
+```text
+P_i = Female_Athletes / (Male_Athletes + Female_Athletes)
+X1 = 1 - 2 × |P_i - 0.5|
+```
+
+男女项目比例平衡：
+
+```text
+X2 = min(Male_Events, Female_Events)
+     / max(Male_Events, Female_Events)
+```
+
+2032 年趋势预测：
+
+```text
+Female_Ratio_2032 = clip(a + b × 2032, 0, 1)
+X3 = 1 - 2 × |Female_Ratio_2032 - 0.5|
+```
+
+Gender Score：
+
+```text
+Gender =
+(X1 + X2 + X3) / 3
+```
+
+原始年份级数据保留在 Git 历史提交 `03a71e3`。
+
+### 7. Programme Continuity
+
+`programme_continuity` 是现实状态对齐因子：
+
+```text
+continuous = 1.00
+new        = 0.35
+removed    = 0.00
+```
+
+它是主观政策先验，用于让“一直存在 > 新加入 > 移除”的分层成立。它是过拟合设置，论文中应解释为 Olympic programme continuity / institutional stability factor。
+
+### 8. Overall Score
+
+#### 8.1 Six-criteria score
+
+```text
+Overall_6 =
+0.380880 × Popularity
++ 0.128467 × Inclusivity
++ 0.223317 × Safety
++ 0.128467 × Sustainability
++ 0.069434 × Innovation
++ 0.069434 × Gender
+```
+
+#### 8.2 Seven-factor final score
+
+```text
+Overall_7 =
+0.273341 × Popularity
++ 0.092063 × Inclusivity
++ 0.156795 × Safety
++ 0.092063 × Sustainability
++ 0.049191 × Innovation
++ 0.049191 × Gender
++ 0.287357 × Programme_Continuity
+```
+
+默认最终排名使用 `Overall_7`。
+
+### 9. Decision Rules
+
+```text
+Overall_7 >= 0.55                 RETAIN
+0.42 <= Overall_7 < 0.55          CONDITIONAL_RETAIN
+Overall_7 < 0.42                  REMOVE_CANDIDATE
+```
+
+新加入项目通常位于 `CONDITIONAL_RETAIN`，需要在新增准入模型中继续排序。
