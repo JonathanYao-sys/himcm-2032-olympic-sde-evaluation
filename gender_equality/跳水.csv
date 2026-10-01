@@ -1,6 +1,0 @@
-﻿sde_id,sport,year,male_athletes,female_athletes,male_events,female_events,is_current,source,notes
-DIVING,Diving (跳水),2008,91.0000,91.0000,,,0,https://www.olympedia.org/editions/53/sports/DIV,Olympedia official Olympic event rows; participant-event sum used as proxy.
-DIVING,Diving (跳水),2012,93.0000,88.0000,,,0,https://www.olympedia.org/editions/54/sports/DIV,Olympedia official Olympic event rows; participant-event sum used as proxy.
-DIVING,Diving (跳水),2016,89.0000,89.0000,,,0,https://www.olympedia.org/editions/59/sports/DIV,Olympedia official Olympic event rows; participant-event sum used as proxy.
-DIVING,Diving (跳水),2020,90.0000,89.0000,,,0,https://www.olympedia.org/editions/61/sports/DIV,Olympedia official Olympic event rows; participant-event sum used as proxy.
-DIVING,Diving (跳水),2024,83.0000,89.0000,4.0,4.0,1,https://www.olympedia.org/editions/63/sports/DIV,Latest available Olympic edition: 2024; participant-event sum used as proxy.

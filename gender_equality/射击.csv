@@ -1,6 +1,0 @@
-﻿sde_id,sport,year,male_athletes,female_athletes,male_events,female_events,is_current,source,notes
-SHOOTING,Shooting (射击),2008,363.0000,214.0000,,,0,https://www.olympedia.org/editions/53/sports/SHO,Olympedia official Olympic event rows; participant-event sum used as proxy.
-SHOOTING,Shooting (射击),2012,331.0000,229.0000,,,0,https://www.olympedia.org/editions/54/sports/SHO,Olympedia official Olympic event rows; participant-event sum used as proxy.
-SHOOTING,Shooting (射击),2016,341.0000,214.0000,,,0,https://www.olympedia.org/editions/59/sports/SHO,Olympedia official Olympic event rows; participant-event sum used as proxy.
-SHOOTING,Shooting (射击),2020,273.0000,303.0000,,,0,https://www.olympedia.org/editions/61/sports/SHO,Olympedia official Olympic event rows; participant-event sum used as proxy.
-SHOOTING,Shooting (射击),2024,275.0000,278.0000,7.5,7.5,1,https://www.olympedia.org/editions/63/sports/SHO,Latest available Olympic edition: 2024; participant-event sum used as proxy.

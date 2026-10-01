@@ -1,6 +1,0 @@
-﻿sde_id,sport,year,male_athletes,female_athletes,male_events,female_events,is_current,source,notes
-TRACK_CYCLING,Cycling Track (场地自行车),2008,204.0000,47.0000,,,0,https://www.olympedia.org/editions/53/sports/CTR,Olympedia official Olympic event rows; participant-event sum used as proxy.
-TRACK_CYCLING,Cycling Track (场地自行车),2012,127.0000,106.0000,,,0,https://www.olympedia.org/editions/54/sports/CTR,Olympedia official Olympic event rows; participant-event sum used as proxy.
-TRACK_CYCLING,Cycling Track (场地自行车),2016,140.0000,129.0000,,,0,https://www.olympedia.org/editions/59/sports/CTR,Olympedia official Olympic event rows; participant-event sum used as proxy.
-TRACK_CYCLING,Cycling Track (场地自行车),2020,175.0000,163.0000,,,0,https://www.olympedia.org/editions/61/sports/CTR,Olympedia official Olympic event rows; participant-event sum used as proxy.
-TRACK_CYCLING,Cycling Track (场地自行车),2024,178.0000,178.0000,6.0,6.0,1,https://www.olympedia.org/editions/63/sports/CTR,Latest available Olympic edition: 2024; participant-event sum used as proxy.

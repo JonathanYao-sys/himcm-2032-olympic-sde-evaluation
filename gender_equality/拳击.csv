@@ -1,6 +1,0 @@
-﻿sde_id,sport,year,male_athletes,female_athletes,male_events,female_events,is_current,source,notes
-BOXING,Boxing (拳击),2008,283.0000,0.0000,,,0,https://www.olympedia.org/editions/53/sports/BOX,Olympedia official Olympic event rows; participant-event sum used as proxy.
-BOXING,Boxing (拳击),2012,247.0000,36.0000,,,0,https://www.olympedia.org/editions/54/sports/BOX,Olympedia official Olympic event rows; participant-event sum used as proxy.
-BOXING,Boxing (拳击),2016,247.0000,36.0000,,,0,https://www.olympedia.org/editions/59/sports/BOX,Olympedia official Olympic event rows; participant-event sum used as proxy.
-BOXING,Boxing (拳击),2020,187.0000,102.0000,,,0,https://www.olympedia.org/editions/61/sports/BOX,Olympedia official Olympic event rows; participant-event sum used as proxy.
-BOXING,Boxing (拳击),2024,124.0000,122.0000,7.0,6.0,1,https://www.olympedia.org/editions/63/sports/BOX,Latest available Olympic edition: 2024; participant-event sum used as proxy.

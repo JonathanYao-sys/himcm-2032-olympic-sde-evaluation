@@ -1,6 +1,0 @@
-﻿sde_id,sport,year,male_athletes,female_athletes,male_events,female_events,is_current,source,notes
-FOOTBALL,Football (足球),2008,274.0000,195.0000,,,0,https://www.olympedia.org/editions/53/sports/FBL,Olympedia official Olympic event rows; participant-event sum used as proxy.
-FOOTBALL,Football (足球),2012,267.0000,200.0000,,,0,https://www.olympedia.org/editions/54/sports/FBL,Olympedia official Olympic event rows; participant-event sum used as proxy.
-FOOTBALL,Football (足球),2016,270.0000,203.0000,,,0,https://www.olympedia.org/editions/59/sports/FBL,Olympedia official Olympic event rows; participant-event sum used as proxy.
-FOOTBALL,Football (足球),2020,296.0000,228.0000,,,0,https://www.olympedia.org/editions/61/sports/FBL,Olympedia official Olympic event rows; participant-event sum used as proxy.
-FOOTBALL,Football (足球),2024,291.0000,215.0000,1.0,1.0,1,https://www.olympedia.org/editions/63/sports/FBL,Latest available Olympic edition: 2024; participant-event sum used as proxy.

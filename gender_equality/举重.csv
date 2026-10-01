@@ -1,6 +1,0 @@
-﻿sde_id,sport,year,male_athletes,female_athletes,male_events,female_events,is_current,source,notes
-WEIGHTLIFTING,Weightlifting (举重),2008,166.0000,87.0000,,,0,https://www.olympedia.org/editions/53/sports/WLF,Olympedia official Olympic event rows; participant-event sum used as proxy.
-WEIGHTLIFTING,Weightlifting (举重),2012,149.0000,103.0000,,,0,https://www.olympedia.org/editions/54/sports/WLF,Olympedia official Olympic event rows; participant-event sum used as proxy.
-WEIGHTLIFTING,Weightlifting (举重),2016,152.0000,103.0000,,,0,https://www.olympedia.org/editions/59/sports/WLF,Olympedia official Olympic event rows; participant-event sum used as proxy.
-WEIGHTLIFTING,Weightlifting (举重),2020,98.0000,96.0000,,,0,https://www.olympedia.org/editions/61/sports/WLF,Olympedia official Olympic event rows; participant-event sum used as proxy.
-WEIGHTLIFTING,Weightlifting (举重),2024,61.0000,61.0000,5.0,5.0,1,https://www.olympedia.org/editions/63/sports/WLF,Latest available Olympic edition: 2024; participant-event sum used as proxy.

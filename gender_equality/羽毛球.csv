@@ -1,6 +1,0 @@
-﻿sde_id,sport,year,male_athletes,female_athletes,male_events,female_events,is_current,source,notes
-BADMINTON,Badminton (羽毛球),2008,89.0000,95.0000,,,0,https://www.olympedia.org/editions/53/sports/BDM,Olympedia official Olympic event rows; participant-event sum used as proxy.
-BADMINTON,Badminton (羽毛球),2012,88.0000,94.0000,,,0,https://www.olympedia.org/editions/54/sports/BDM,Olympedia official Olympic event rows; participant-event sum used as proxy.
-BADMINTON,Badminton (羽毛球),2016,89.0000,88.0000,,,0,https://www.olympedia.org/editions/59/sports/BDM,Olympedia official Olympic event rows; participant-event sum used as proxy.
-BADMINTON,Badminton (羽毛球),2020,89.0000,91.0000,,,0,https://www.olympedia.org/editions/61/sports/BDM,Olympedia official Olympic event rows; participant-event sum used as proxy.
-BADMINTON,Badminton (羽毛球),2024,90.0000,86.0000,2.5,2.5,1,https://www.olympedia.org/editions/63/sports/BDM,Latest available Olympic edition: 2024; participant-event sum used as proxy.

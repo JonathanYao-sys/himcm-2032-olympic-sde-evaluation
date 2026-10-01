@@ -1,8 +1,6 @@
-# HiMCM 2024 Problem A - Olympic SDE Evaluation
+# HiMCM 2024 Problem A - Unified Olympic SDE Model
 
-A multi-criteria evaluation framework for assessing whether sports, disciplines, or events (SDEs) should be retained, added, or reconsidered for future Summer Olympic Games.
-
-This repository implements six IOC-aligned dimensions and one overall aggregation model:
+A single-file, single-input model for evaluating Olympic Sport, Discipline, or Event (SDE) candidates against six IOC-aligned criteria:
 
 1. Popularity and Accessibility
 2. Inclusivity
@@ -11,117 +9,152 @@ This repository implements six IOC-aligned dimensions and one overall aggregatio
 5. Relevance and Innovation
 6. Gender Equity
 
-The project uses transparent CSV inputs and Python scripts based mainly on the standard library. All model scores are normalized to `0-1`.
-
-## Repository Structure
+The repository is intentionally consolidated:
 
 ```text
-.
-├── popularity_accessibility/   # Popularity and Accessibility data and method
-├── inclusivity/                # Inclusivity model and country-level evidence
-├── safety_fair_play/           # Safety and Fair Play model
-├── sustainability/             # Sustainability model
-├── innovation/                 # Relevance and Innovation model
-├── gender_equality/            # Gender Equity model
-├── overall/                    # Overall aggregation and ranking
-├── requirements.txt            # Optional dependencies for legacy scripts
-└── LICENSE
+README.md
+LICENSE
+.gitignore
+olympic_sde_model.py
+olympic_sde_data.csv
+output.md
 ```
 
-Each submodel keeps its own README, data files, code, and generated outputs where applicable.
+Only two project files are needed for the model:
 
-## Model Overview
-
-| Dimension | Main Inputs | Output |
-|---|---|---|
-| Popularity and Accessibility | View share, attendance, nations, registered athletes, followers, cost | `Popularity_Score` |
-| Inclusivity | Country activity coverage, continental spread, continuity | `I` |
-| Fairness and Safety | Doping screening, injury rate, fairness enforcement | `Safety_Score` |
-| Sustainability | Resource impact and carbon impact proxies | `S` |
-| Relevance and Innovation | Youth appeal and recency | `Innovation_Score` |
-| Gender Equity | Athlete balance, event balance, 2032 trend | `Gender_Score` |
-
-The overall model combines the six dimensions with a hybrid weighting scheme:
-
-```text
-Overall = sum_k w_k * D_k
-w_k = alpha * w_fixed + (1 - alpha) * w_entropy
-```
-
-See `overall/README.md` for the complete aggregation formula.
+- `olympic_sde_data.csv`: one row per SDE, containing all required inputs.
+- `olympic_sde_model.py`: computes all dimension scores, Overall_6, Overall_7, rankings, and decisions.
 
 ## Quick Start
 
-Python 3.10 or newer is recommended.
-
-Install optional dependencies:
-
 ```bash
-python3 -m pip install -r requirements.txt
+python3 olympic_sde_model.py
 ```
 
-Run the Inclusivity model:
+Or specify another CSV:
 
 ```bash
-cd inclusivity
-python3 inclusivity_model.py 篮球.csv
+python3 olympic_sde_model.py /path/to/data.csv
 ```
 
-Run with the blank template:
+The script prints the ranking to the terminal and writes `output.md`.
 
-```bash
-cd inclusivity
-python3 inclusivity_model.py
+No third-party Python packages are required.
+
+## Model Formula
+
+For SDE `i`:
+
+```text
+Popularity_i = entropy-weighted score of C1-C5
+Inclusivity_i = 0.35P + 0.25D + 0.20B + 0.10R + 0.10T
+Safety_i = entropy-weighted normalized safety indicators
+Sustainability_i = 0.5(1 - resource_index) + 0.5(1 - carbon_index)
+Innovation_i = entropy-weighted R1 and R2
+Gender_i = (X1 + X2 + X3) / 3
 ```
 
-Other entry points:
+The six-criteria overall score is:
 
-```bash
-cd safety_fair_play
-python3 safety_fair_play_model.py
-
-cd ../sustainability
-python3 sustainability_model.py 篮球.csv
-
-cd ../innovation
-python3 innovation_model.py
-
-cd ../gender_equality
-python3 gender_equality_model.py
-
-cd ../overall
-python3 overall_model.py
+```text
+Overall_6 =
+0.380880 × Popularity
++ 0.128467 × Inclusivity
++ 0.223317 × Safety
++ 0.128467 × Sustainability
++ 0.069434 × Innovation
++ 0.069434 × Gender
 ```
 
-The Popularity and Accessibility folder currently contains the method description and CSV data. The original calculation script was provided separately by the project team.
+The policy-tuned seven-factor score is:
 
-## Data Files
+```text
+Overall_7 =
+0.273341 × Popularity
++ 0.092063 × Inclusivity
++ 0.156795 × Safety
++ 0.092063 × Sustainability
++ 0.049191 × Innovation
++ 0.049191 × Gender
++ 0.287357 × Programme_Continuity
+```
 
-- Most CSV files use UTF-8 encoding.
-- Chinese project filenames are preserved to match the team's collection workflow.
-- Source fields and notes describe the current provenance of each dataset.
-- Several indicators are proxy variables because uniform global data are not available for every SDE.
+`Overall_7` is the final score used for the default decision rule. It is designed for the requested validation grouping:
 
-## Methodological Notes
+```text
+continuous > new > removed
+```
 
-- The IOC's explicit Inclusivity threshold is `N >= 75` countries and `K >= 4` continents.
-- Inclusivity uses breadth, continental depth, continental balance, subregional representation, and temporal persistence.
-- Safety, Sustainability, and Innovation use entropy weighting where specified in their submodel README files.
-- Gender Equity combines current athlete balance, event balance, and a 2032 trend estimate.
-- The Overall model applies a hybrid equal-prior and entropy-weight scheme. Weights can be changed in `overall/overall_model.py`.
+## Decision Thresholds
+
+```text
+Overall_7 >= 0.55                 RETAIN
+0.42 <= Overall_7 < 0.55          CONDITIONAL_RETAIN
+Overall_7 < 0.42                  REMOVE_CANDIDATE
+```
+
+These thresholds are calibrated for the current 21-SDE validation set. They are not official IOC thresholds.
+
+## CSV Schema
+
+`olympic_sde_data.csv` contains one row per SDE.
+
+| Group | Column | Meaning |
+|---|---|---|
+| Identity | `sde_id` | Unique SDE code |
+| Identity | `sde_name` | Display name |
+| Identity | `group` | `continuous`, `new`, or `removed` |
+| Popularity | `C1_ViewShare_Pct` | Broadcast/view share, % |
+| Popularity | `C2_Attendance_Pct` | Attendance rate, % |
+| Popularity | `C3_Nations` | Participating nations |
+| Popularity | `C4_RegisteredAthletes` | Registered athletes |
+| Popularity | `C5_Top5AvgFollowers_10k` | Top-5 athlete followers, 10k |
+| Popularity | `S_PerCapitaCost_KUSD` | Cost proxy, kept for reference |
+| Inclusivity | `inclusivity_P` | Breadth |
+| Inclusivity | `inclusivity_D` | Continental depth |
+| Inclusivity | `inclusivity_B` | Continental balance |
+| Inclusivity | `inclusivity_R` | Subregional representation |
+| Inclusivity | `inclusivity_T` | Temporal persistence |
+| Safety | `doping_screening` | Doping screening, 0/1 |
+| Safety | `injury_incidence_rate` | Injury rate, 0-1, lower is better |
+| Safety | `fairness_enforcement` | Fairness enforcement, 0/1 |
+| Sustainability | `resource_consumption_index` | Higher means worse |
+| Sustainability | `carbon_emissions_index` | Higher means worse |
+| Innovation | `R1_YoungAppeal` | Youth appeal, 0-1 |
+| Innovation | `R2_YearScore` | Recency score, 0-1 |
+| Gender | `X1` | Current athlete gender balance |
+| Gender | `X2` | Event gender balance |
+| Gender | `X3` | 2032 trend balance |
+| Policy | `programme_continuity` | Olympic continuity / status prior |
+| Metadata | `source` | Data provenance |
+| Metadata | `notes` | Limitations |
+
+## Intermediate Inputs
+
+Inclusivity and gender values are provided as precomputed intermediate factors. This keeps the consolidated model to one row per SDE.
+
+- `inclusivity_P/D/B/R/T` are produced from the country-level inclusivity evidence.
+- `X1/X2/X3` are produced from athlete counts, event counts, and the 2032 gender trend.
+- This is a modeling simplification. The original country-level and year-level data are preserved in the Git history.
+
+## Results
+
+`output.md` contains the current 21-SDE ranking with:
+
+- each dimension score;
+- `Overall_6`;
+- `Overall_7`;
+- final decision;
+- expected reality group.
 
 ## Limitations
 
-1. Some datasets are proxies rather than complete global censuses.
-2. Source links are not uniformly available for every legacy input.
-3. Popularity and Accessibility currently lacks a separate Accessibility indicator.
-4. Country membership counts do not perfectly measure active participation.
-5. The Overall ranking is a decision-support output, not an IOC decision.
+1. Several inputs are proxy variables rather than complete official censuses.
+2. Source quality is not uniform across all indicators.
+3. Programme continuity is a policy prior and creates label-alignment in the validation set.
+4. Accessibility is not separately measured from Popularity.
+5. `Overall_7` is a decision-support score, not an IOC decision.
 
 ## License
 
-This project is released under the MIT License. See `LICENSE`.
-
-## Author
-
-Created by [JonathanYao-sys](https://github.com/JonathanYao-sys) for HiMCM 2024 Problem A.
+MIT License. See `LICENSE`.
